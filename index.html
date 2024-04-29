@@ -4,24 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Simple todo app using HTML, CSS, and JavaScript" />
-    <meta name="keywords" content="todo, todo list, tasks, productivity" />
+    <meta name="description" content="Simple task app using HTML, CSS, and JavaScript" />
+    <meta name="keywords" content="task, task list, tasks, productivity" />
     <meta name="author" content="Annabella Al-Samarae" />
     <title>Bella's Tasks</title>
     <link rel="stylesheet" href="./assets/css/index.css" />
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
-
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <main class="container">
-        <h1>Todo App</h1>
+        <h1>Bella's Tasks</h1>
         <div class="input-container">
-            <input type="text" id="todoInput" placeholder="Enter your todo" />
-            <button id="addBtn">Add Todo</button>
+            <input type="text" id="taskInput" placeholder="Enter your task" />
+            <button id="addBtn">Add Task</button>
         </div>
         <p id="errorMessage" class="error-message"></p>
-        <ul id="todoList"></ul>
+        <ul id="taskList"></ul>
     </main>
     <script src="./assets/js/index.js"></script>
 </body>

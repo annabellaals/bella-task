@@ -1,23 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const todoInput = document.getElementById("todoInput");
+    const taskInput = document.getElementById("taskInput");
     const addBtn = document.getElementById("addBtn");
-    const todoList = document.getElementById("todoList");
+    const taskList = document.getElementById("taskList");
     const errorMessage = document.getElementById("errorMessage");
 
-    let todoCounter = 0;
-    let todos = [];
+    let taskCounter = 0;
+    let tasks = [];
 
-    const storedTodos = JSON.parse(localStorage.getItem("todos"));
-    if (storedTodos) {
-        todos = storedTodos;
-        renderTodos();
+    const storedtasks = JSON.parse(localStorage.getItem("tasks"));
+    if (storedtasks) {
+        tasks = storedtasks;
+        rendertasks();
     }
 
     addBtn.addEventListener("click", function () {
-        const todoText = todoInput.value.trim();
-        if (todoText !== "") {
-            addTodoItem(todoText);
-            todoInput.value = "";
+        const taskText = taskInput.value.trim();
+        if (taskText !== "") {
+            addtaskItem(taskText);
+            taskInput.value = "";
             errorMessage.style.display = "none";
         } else {
             errorMessage.textContent = "Input cannot be empty";
@@ -25,53 +25,53 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    todoInput.addEventListener("keypress", function (event) {
+    taskInput.addEventListener("keypress", function (event) {
         if (event.key === "Enter") {
             addBtn.click();
         }
     });
 
-    function addTodoItem(todoText) {
-        const todoId = "todo_" + todoCounter;
-        const todo = { id: todoId, text: todoText };
-        todos.push(todo);
-        saveTodos();
-        renderTodos();
-        todoCounter++;
+    function addtaskItem(taskText) {
+        const taskId = "task_" + taskCounter;
+        const task = { id: taskId, text: taskText };
+        tasks.push(task);
+        savetasks();
+        rendertasks();
+        taskCounter++;
     }
 
-    function deleteTodoItem(todoId) {
-        todos = todos.filter((todo) => todo.id !== todoId);
-        saveTodos();
-        renderTodos();
+    function deletetaskItem(taskId) {
+        tasks = tasks.filter((task) => task.id !== taskId);
+        savetasks();
+        rendertasks();
     }
 
-    function saveTodos() {
-        localStorage.setItem("todos", JSON.stringify(todos));
+    function savetasks() {
+        localStorage.setItem("tasks", JSON.stringify(tasks));
     }
 
 
-    function renderTodos() {
-        todoList.innerHTML = "";
+    function rendertasks() {
+        taskList.innerHTML = "";
 
-        todos.forEach((todo) => {
+        tasks.forEach((task) => {
             const li = document.createElement("li");
-            li.setAttribute("id", todo.id);
+            li.setAttribute("id", task.id);
 
-            const todoSpan = document.createElement("span");
-            todoSpan.textContent = todo.text;
-            li.appendChild(todoSpan);
+            const taskSpan = document.createElement("span");
+            taskSpan.textContent = task.text;
+            li.appendChild(taskSpan);
 
             const deleteBtn = document.createElement("button");
             deleteBtn.textContent = "Delete";
             deleteBtn.className = "delete-btn";
             deleteBtn.addEventListener("click", function () {
-                deleteTodoItem(todo.id);
+                deletetaskItem(task.id);
             });
 
             li.appendChild(deleteBtn);
 
-            todoList.appendChild(li);
+            taskList.appendChild(li);
         });
     }
 });
