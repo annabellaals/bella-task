@@ -29,6 +29,10 @@ document.addEventListener("DOMContentLoaded", function () {
         todoCounter++;
     }
 
+    function deleteTodoItem(todoId) {
+        todos = todos.filter((todo) => todo.id !== todoId);
+        renderTodos();
+    }
 
 
     function renderTodos() {
@@ -42,7 +46,14 @@ document.addEventListener("DOMContentLoaded", function () {
             todoSpan.textContent = todo.text;
             li.appendChild(todoSpan);
 
+            const deleteBtn = document.createElement("button");
+            deleteBtn.textContent = "Delete";
+            deleteBtn.className = "delete-btn";
+            deleteBtn.addEventListener("click", function () {
+                deleteTodoItem(todo.id);
+            });
 
+            li.appendChild(deleteBtn);
 
             todoList.appendChild(li);
         });
