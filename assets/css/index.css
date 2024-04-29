@@ -44,7 +44,6 @@ input[type="text"] {
 
     font-size: .8rem;
     letter-spacing: 1px;
-    text-transform: uppercase;
     transition: .3s ease-out;
 }
 
