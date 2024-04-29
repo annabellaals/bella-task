@@ -5,7 +5,11 @@ document.addEventListener("DOMContentLoaded", function () {
     let todoCounter = 0;
     let todos = [];
 
-
+    const storedTodos = JSON.parse(localStorage.getItem("todos"));
+    if (storedTodos) {
+        todos = storedTodos;
+        renderTodos();
+    }
 
     addBtn.addEventListener("click", function () {
         const todoText = todoInput.value.trim();
