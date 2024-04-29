@@ -25,13 +25,19 @@ document.addEventListener("DOMContentLoaded", function () {
         const todoId = "todo_" + todoCounter;
         const todo = { id: todoId, text: todoText };
         todos.push(todo);
+        saveTodos();
         renderTodos();
         todoCounter++;
     }
 
     function deleteTodoItem(todoId) {
         todos = todos.filter((todo) => todo.id !== todoId);
+        saveTodos();
         renderTodos();
+    }
+
+    function saveTodos() {
+        localStorage.setItem("todos", JSON.stringify(todos));
     }
 
 
