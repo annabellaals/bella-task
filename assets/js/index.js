@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const todoInput = document.getElementById("todoInput");
     const addBtn = document.getElementById("addBtn");
     const todoList = document.getElementById("todoList");
+    const errorMessage = document.getElementById("errorMessage");
+
     let todoCounter = 0;
     let todos = [];
 
@@ -16,6 +18,10 @@ document.addEventListener("DOMContentLoaded", function () {
         if (todoText !== "") {
             addTodoItem(todoText);
             todoInput.value = "";
+            errorMessage.style.display = "none";
+        } else {
+            errorMessage.textContent = "Input cannot be empty";
+            errorMessage.style.display = "block";
         }
     });
 
