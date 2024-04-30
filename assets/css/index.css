@@ -79,6 +79,10 @@ li:last-child {
   border-bottom: none;
 }
 
+span {
+  text-transform: capitalize;
+}
+
 .delete-btn {
   padding: 10px 14px;
   background-color: #dc3545;

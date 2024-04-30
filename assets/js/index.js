@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const taskInput = document.getElementById("taskInput");
+  const assigneeInput = document.getElementById("assigneeInput");
   const addBtn = document.getElementById("addBtn");
   const taskList = document.getElementById("taskList");
   const errorMessage = document.getElementById("errorMessage");
@@ -18,14 +19,16 @@ document.addEventListener("DOMContentLoaded", function () {
   // Event listener for clicking on "Add Task" button
   addBtn.addEventListener("click", function () {
     const taskText = taskInput.value.trim();
+    const assigneeText = assigneeInput.value.trim();
     // If input is not empty, then add a task
-    if (taskText !== "") {
-      addtaskItem(taskText);
+    if (taskText !== "" && assigneeText !== "") {
+      addtaskItem(taskText, assigneeText);
       taskInput.value = "";
+      assigneeInput.value = "";
       errorMessage.style.display = "none";
     } else {
       // If input is empty, then render this error message
-      errorMessage.textContent = "Input cannot be empty";
+      errorMessage.textContent = "None of the input can be empty";
       errorMessage.style.display = "block";
     }
   });
@@ -38,10 +41,10 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Function for adding tasks
-  function addtaskItem(taskText) {
+  function addtaskItem(taskText, assigneeText) {
     // Assign an id for each task and increment amount of tasks in array
     const taskId = "task_" + taskCounter;
-    const task = { id: taskId, text: taskText };
+    const task = { id: taskId, text: taskText, assignee: assigneeText };
     // Push new task to the tasks array. Then run saveTasks and renderTasks functions
     tasks.push(task);
     saveTasks();
@@ -73,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // For each iteration, create a span element and give it a text
       const taskSpan = document.createElement("span");
-      taskSpan.textContent = task.text;
+      taskSpan.textContent = task.text + " - Assigned to: " + task.assignee;
       li.appendChild(taskSpan);
 
       // For each iteration, create a button element for deleting the specific task based on its id
