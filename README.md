@@ -34,7 +34,7 @@ Bella's To Do App is a responsive to-do list application built using JavaScript,
 
 **Responsive Design**
 
-    - Explanation: The app is fully responsive, allowing it to be used on various devices including desktops, tablets, and smartphones. The layout adjusts according to screen size for an optimal experience.
+    The app is fully responsive, allowing it to be used on various devices including desktops, tablets, and smartphones. The layout adjusts according to screen size for an optimal experience.
 
 ## Testings ##
 The app provides a seamless user experience, allowing users to efficiently manage their tasks. It functions as intended, enabling users to add new tasks, remove completed or unnecessary tasks, and permanently save their list for later access. All buttons are fully functional, offering users an intuitive way to interact with the app and maintain an organized list of tasks. The responsive design ensures a consistent experience across different devices, making the app easy to use whether on a desktop, tablet, or smartphone.
