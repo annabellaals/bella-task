@@ -3,6 +3,18 @@ Bella's To Do App is a responsive to-do list application built using JavaScript,
 
 ![Mockup-image](assets/rm-images/mockup-img.png)
 
+## Design
+
+The design of Bellas To Do App prioritizes simplicity and ease of use. The user interface is clean and straightforward, focusing on the core functionality of adding and removing tasks from a list. 
+
+- **Minimalistic Layout:** The app uses a minimalist layout to keep the focus on the tasks at hand, avoiding unnecessary distractions.
+- **Intuitive Controls:** Users can easily interact with the app thanks to the clear and intuitive controls. Buttons are clearly labeled and strategically placed for convenient access.
+- **Responsive Design:** The app's design is responsive, ensuring a consistent experience across various devices, including desktops, tablets, and smartphones.
+- **Color Scheme:** The color scheme is simple and unobtrusive, aiming to create a comfortable environment for task management.
+
+Overall, the design complements the functionality of the app, providing users with an efficient and user-friendly task management tool."
+
+
 ## Features
 
 - **Create and Manage Lists:** Easily create and manage your to-do list.
@@ -56,12 +68,38 @@ The app provides a seamless user experience, allowing users to efficiently manag
 
   None found.
 
-## Deployment ## 
-- The site was deployed to GitHub pages.
+### Deployment
 
-Live link: https://annabellaals.github.io/bella-todo-app/
+The site is deployed using GitHub Pages - [Bella's To Do](https://annabellaals.github.io/bella-todo-app/).
 
-Github link: https://github.com/annabellaals/bella-todo-app
+To Deploy the site using GitHub Pages:
+
+1. Login (or signup) to Github.
+2. Go to the repository for this project, [annabellaals/bella-todo-app](https://github.com/annabellaals/bella-todo-app).
+3. Click the settings button.
+4. Select pages in the left hand navigation menu.
+5. From the source dropdown select main branch and press save.
+6. The site has now been deployed, please note that this process may take a few minutes before the site goes live.
+
+### Local Development
+
+#### How to Fork
+
+To fork the repository:
+
+1. Log in (or sign up) to Github.
+2. Go to the repository for this project, [annabellaals/bella-todo-app](https://github.com/annabellaals/bella-todo-app)
+3. Click the Fork button in the top right corner.
+
+#### How to Clone
+
+To clone the repository:
+
+1. Log in (or sign up) to GitHub.
+2. Go to the repository for this project, [annabellaals/bella-todo-app](https://github.com/annabellaals/bella-todo-app)
+3. Click on the code button, select whether you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
+4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
+5. Type 'git clone' into the terminal and then paste the link you copied in step 3. Press enter.
 
 ## Credits
 * Credits to Code Institude, tasks taught me a lot on how to put things together. Help from mentor, and the slack community.
